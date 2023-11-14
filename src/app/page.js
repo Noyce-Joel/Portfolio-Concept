@@ -4,15 +4,18 @@ import { Canvas } from "@react-three/fiber";
 import Stage from "../../components/Stage";
 import { Suspense, useEffect } from "react";
 import Head from "next/head";
-import Desktop from '../../components/Desktop'
+import Desktop from "../../components/Desktop";
 export default function Home() {
   useEffect(() => {
     const imagePaths = [
       "/me.webp",
-      "/2.webp",
-      "/3.webp",
-      "/4.webp",
-      "/5.webp",
+      "/b21.webp",
+      "/b22.webp",
+      "/b23.webp",
+      "/cafe1.webp",
+      "/cafe2.webp",
+      "/cafe3.webp",
+      "/cafe4.webp",
       "/a1.webp",
       "/a2.webp",
       "/a3.webp",
@@ -20,27 +23,6 @@ export default function Home() {
       "/p1.webp",
       "/p2.webp",
       "/p3.webp",
-      "/Skills/css.webp",
-      "/Skills/github.webp",
-      "/Skills/gql.webp",
-      "/Skills/html.webp",
-      "/Skills/js.webp",
-      "/Skills/mdb.webp",
-      "/Skills/motion.webp",
-      "/Skills/next.webp",
-      "/Skills/react-spring.webp",
-      "/Skills/react.webp",
-      "/Skills/tailwindcss.webp",
-      "/Skills/Three.webp",
-      "/Skills/ts.webp",
-      "/Skills/vs.webp",
-      "/Backgrounds/right-bg.png",
-      "/Backgrounds/bg.png",
-      "/Backgrounds/front-bg.png",
-      "/Backgrounds/back-bg.png",
-      "/Backgrounds/back-bg.png",
-      "/Backgrounds/projects-bg.png",
-
     ];
 
     imagePaths.forEach((path) => {
@@ -53,8 +35,8 @@ export default function Home() {
   }, []);
   return (
     <>
-    <Desktop />
-      
+      <Desktop />
+
       <Suspense fallback={<span>Loading...</span>}>
         <Canvas
           camera={{ position: [0, 0, 500] }}
@@ -65,7 +47,6 @@ export default function Home() {
           <Stage />
         </Canvas>
       </Suspense>
-     
     </>
   );
 }

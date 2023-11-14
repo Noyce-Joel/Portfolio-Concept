@@ -9,30 +9,9 @@ function About({
   
   video,
   position,
-  className,
+ 
 }) {
-  const container = {
-    whileInView: {
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.15,
-      },
-    },
-  };
-  const animation = {
-    initial: {
-      opacity: 0,
-      scale: 0.7,
-    },
-    whileInView: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        type: "spring",
-      },
-    },
-  };
+  
   return (
     <>
       <Html position={position} center>

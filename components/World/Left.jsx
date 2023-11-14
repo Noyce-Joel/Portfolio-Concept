@@ -3,6 +3,7 @@ import Follow from "../Follow";
 import { WorldDoor } from "../../public/DoorCopy/Copy";
 import Door from "../Door";
 import About from "../../components/World/About";
+import Skills from "./Skills";
 
 function Left({  world, active, setActive, name, isBackVisible, escape}) {
   const doorPosition = [-2.5, -1, 0];
@@ -10,10 +11,13 @@ function Left({  world, active, setActive, name, isBackVisible, escape}) {
   return (
     <>
       {isBackVisible && (
+        <>
         <About
           
           position={position}
         />
+        <Skills />
+        </>
       )}
       {world && !isBackVisible && (
         <>

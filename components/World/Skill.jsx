@@ -11,8 +11,8 @@ function Skill({src, id}) {
         src={src}
         alt='skill'
         className="skill-img"
-        width={80}
-        height={80}
+        width={200}
+        height={200}
         id={id}
       />
     </>

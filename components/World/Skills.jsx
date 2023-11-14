@@ -1,24 +1,64 @@
 import React from "react";
 import Skill from "./Skill";
+import { Html } from "@react-three/drei";
+import { motion } from "framer-motion";
 
 function Skills() {
+  const skills = [
+    "/Skills/js.webp",
+    "/Skills/ts.webp",
+    "/Skills/gql.webp",
+    "/Skills/mdb.webp",
+    "/Skills/Three.webp",
+    "/Skills/react-spring.webp",
+    "/Skills/motion.webp",
+    "/Skills/vs.webp",
+    "/Skills/github.webp",
+    "/Skills/next.webp",
+    "/Skills/css.webp",
+    "/Skills/html.webp",
+    "/Skills/tailwindcss.webp",
+    "/Skills/react.webp",
+    "/Skills/ts.webp",
+  ];
+  const container = {
+    whileInView: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0,
+      },
+    },
+  };
+  const animation = {
+    initial: {
+      opacity: 0,
+      scale: 0.7,
+    },
+    whileInView: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+      },
+    },
+  };
+
   return (
-    <div className="skills">
-      <Skill src="/Skills/js.webp" />
-      <Skill src="/Skills/ts.webp" />
-      <Skill src="/Skills/gql.webp" />
-      <Skill src="/Skills/mdb.webp" />
-      <Skill src="/Skills/Three.webp" />
-      <Skill src="/Skills/react-spring.webp" />
-      <Skill src="/Skills/motion.webp" />
-      <Skill src="/Skills/vs.webp" />
-      <Skill src="/Skills/github.webp" />
-      <Skill src="/Skills/next.webp" />
-      <Skill src="/Skills/css.webp" />
-      <Skill src="/Skills/html.webp" />
-      <Skill src="/Skills/tailwindcss.webp" />
-      <Skill src="/Skills/react.webp" />
-    </div>
+    <Html center position={[-5, 0, 0]}>
+      <motion.div
+        variants={container}
+        initial="initial"
+        whileInView="whileInView"
+        className="skills"
+      >
+        {skills.map((skill, idx) => (
+          <motion.div variants={animation}>
+            <Skill src={skill} key={idx} />
+          </motion.div>
+        ))}
+      </motion.div>
+    </Html>
   );
 }
 
