@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
           key="desc"
         />
         <meta property="og:title" content="Portfolio Concept" />
-        <meta property="og:description" content="A portfolio concept" />
+        <meta property="og:description" content="A portfolio concept for a project." />
       </Head>
       <html lang="en">
         <body className={inter.className}>{children}</body>
