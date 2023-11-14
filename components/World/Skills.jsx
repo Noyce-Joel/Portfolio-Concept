@@ -53,8 +53,8 @@ function Skills() {
         className="skills"
       >
         {skills.map((skill, idx) => (
-          <motion.div variants={animation}>
-            <Skill src={skill} key={idx} />
+          <motion.div key={idx} variants={animation}>
+            <Skill src={skill} />
           </motion.div>
         ))}
       </motion.div>
