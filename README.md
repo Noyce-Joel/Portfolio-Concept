@@ -4,8 +4,6 @@ An idea for a portoflio 💡
 
 Originally it was purely conceptual so it was very cool and inspiring to see that it could actually work 🤙 🎉
 
-I'm not flashy enough to use it for my own personal site 
-
 
 ## Stack:
 
