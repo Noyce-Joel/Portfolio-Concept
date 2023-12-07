@@ -2,7 +2,7 @@
 
 An idea for a portoflio 💡 
 
-Originally it was purely conceptual so it was very cool and inspiring to see that it could actually work 🤙 🎉
+I was so psyched to bring this concept to life! 🤙 🎉
 
 
 ## Stack:
