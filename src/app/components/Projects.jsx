@@ -21,7 +21,6 @@ function Projects({
   back,
   top,
   bottom,
-  
   set,
   nav,
   setNav,
@@ -66,14 +65,14 @@ function Projects({
         setNav(false);
       }
     };
-    document.addEventListener("mousedown", handleMouseDown);
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("keydown", handleRotate);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", handleRotate);
 
     return () => {
-      document.removeEventListener("mousedown", handleMouseDown);
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("keydown", handleRotate);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keydown", handleRotate);
     };
   }, [escape, slideShow, setIsNowVisible, setNav, active, name]);
 

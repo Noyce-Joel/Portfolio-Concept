@@ -13,7 +13,7 @@ import Work from "./Work";
 import Projects from "./Projects";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-import {useAppState} from '../context/Provider'
+import { useAppState } from "../context/Provider";
 const box = new THREE.BoxGeometry(10, 10, 10);
 const left = new THREE.MeshStandardMaterial({
   color: "rgb(32, 80, 100)",
@@ -76,10 +76,10 @@ function Stage() {
   const [rotateRight, setRotateRight] = useState(null);
 
   const [type, setType] = useState(true);
-  const [nav, setNav] = useState(null)
+  const [nav, setNav] = useState(null);
 
   const [isNowVisible, setIsNowVisible] = useState(null);
-  
+
   const controlsRef = useRef();
   const scene = useThree((state) => state.scene);
 
@@ -144,7 +144,7 @@ function Stage() {
         targetPosition.z,
         true
       );
-    } else  if (projects) {
+    } else if (projects) {
       const targetPosition = new THREE.Vector3();
       scene.getObjectByName(projects).getWorldPosition(targetPosition);
       controlsRef.current.setLookAt(
@@ -157,19 +157,9 @@ function Stage() {
         true
       );
     } else {
-      controlsRef.current.setLookAt(0, 20,34, 0, 7.5, 0, true);
+      controlsRef.current.setLookAt(0, 20, 34, 0, 7.5, 0, true);
     }
   }, [scene, work, projects, world, active1, active2, active3]);
-
- 
-
- 
-
-  
-
-  
-
- 
 
   useEffect(() => {
     if (rotateLeft) {
@@ -207,11 +197,8 @@ function Stage() {
     setWork(false);
     setProjects(false);
     setType(false);
-    setNav(false)
+    setNav(false);
   };
- 
-
-  
 
   const anim = {
     initial: {
@@ -225,7 +212,7 @@ function Stage() {
         duration: 0.5,
         delay: 0.55,
         staggerChildren: 0.5,
-        delayChildren: 0.4
+        delayChildren: 0.4,
       },
     },
   };
@@ -233,7 +220,7 @@ function Stage() {
   const [hovered, set] = useState();
   useCursor(hovered, "pointer", "auto");
 
-  const texture = useTexture('/p-bg.png')
+  const texture = useTexture("/p-bg.png");
 
   return (
     <>
@@ -245,9 +232,9 @@ function Stage() {
               scale: 1,
               y: 0,
               opacity: 1,
-              transition: { duration: 0.5,  },
+              transition: { duration: 0.5 },
             }}
-            key='typewriter'
+            key="typewriter"
             className={
               work || world || projects || type === false
                 ? "type-hidden"
@@ -275,7 +262,7 @@ function Stage() {
       />
 
       <ContactShadows scale={100} blur={3} opacity={0.5} far={10} />
-     
+
       <World
         moveRight={moveRight("world")}
         moveLeft={moveLeft("world")}
