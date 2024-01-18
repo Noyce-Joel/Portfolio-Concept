@@ -29,29 +29,29 @@ function World({
 }) {
   const isBackVisible = active === name;
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "ArrowLeft") {
-        moveLeft();
-        setNav(false)
-      } else if (e.key === "ArrowRight") {
-        moveRight();
-        setNav(false)
-      } else if (e.key === "Escape") {
-        escape();
-      } else if (e.key === "a") {
-        moveLeft();
-        setNav(false)
-      } else if (e.key === "d") {
-        moveRight();
-        setNav(false)
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [moveLeft, moveRight, escape, setNav]);
+  // useEffect(() => {
+  //   const handleKeyDown = (e) => {
+  //     if (e.key === "ArrowLeft") {
+  //       moveLeft();
+  //       setNav(false)
+  //     } else if (e.key === "ArrowRight") {
+  //       moveRight();
+  //       setNav(false)
+  //     } else if (e.key === "Escape") {
+  //       escape();
+  //     } else if (e.key === "a") {
+  //       moveLeft();
+  //       setNav(false)
+  //     } else if (e.key === "d") {
+  //       moveRight();
+  //       setNav(false)
+  //     }
+  //   };
+  //   document.addEventListener("keydown", handleKeyDown);
+  //   return () => {
+  //     document.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, [moveLeft, moveRight, escape, setNav]);
 
   return (
     <>

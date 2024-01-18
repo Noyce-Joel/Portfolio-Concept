@@ -1,11 +1,14 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import Stage from "../../components/Stage";
+import Stage from "./components/Stage";
 import { Suspense, useEffect } from "react";
 import Head from "next/head";
-import Desktop from "../../components/Desktop";
+import Desktop from "./components/Desktop";
+import { StateProvider, useAppState } from './context/Provider';
+
 export default function Home() {
+
   useEffect(() => {
     const imagePaths = [
       "/me.webp",
@@ -35,6 +38,7 @@ export default function Home() {
   }, []);
   return (
     <>
+    <StateProvider>
       <Desktop />
 
       <Suspense fallback={<span>Loading...</span>}>
@@ -47,6 +51,7 @@ export default function Home() {
           <Stage />
         </Canvas>
       </Suspense>
+      </StateProvider>
     </>
   );
 }

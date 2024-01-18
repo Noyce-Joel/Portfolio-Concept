@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { Suspense, useState } from "react";
-import RightArrow from "../../public/svgs/RightArrow";
-import LeftArrow from "../../public/svgs/LeftArrow";
+import RightArrow from "../../../../public/svgs/RightArrow";
+import LeftArrow from "../../../../public/svgs/LeftArrow";
 import Image from "next/image";
 
 function Gallery({ href, images, handleClick, className, index, setIndex }) {

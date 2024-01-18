@@ -1,7 +1,7 @@
 import { Html } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import React from 'react'
-import LeftArrow from '../public/svgs/LeftArrow';
+import LeftArrow from '../../../public/svgs/LeftArrow';
 
 function Door({active, setActive, name, position, door, escape}) {
   return (

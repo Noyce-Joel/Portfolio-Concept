@@ -2,7 +2,7 @@ import React from "react";
 import Project from "./Project";
 
 import Door from "../Door";
-import { ProjectsDoor } from "../../public/DoorCopy/Copy";
+import { ProjectsDoor } from "../../../../public/DoorCopy/Copy";
 function ProjectsFront({
   isNowVisible,
   isVisible,

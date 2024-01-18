@@ -2,7 +2,7 @@ import React from "react";
 import { Html } from "@react-three/drei";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import MusicVideo from "../../public/AboutCopy/MusicVideo";
+import MusicVideo from "../../../../public/AboutCopy/MusicVideo";
 
 function About({
   

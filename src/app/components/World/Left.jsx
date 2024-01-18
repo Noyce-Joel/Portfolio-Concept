@@ -1,8 +1,8 @@
 import React from "react";
 import Follow from "../Follow";
-import { WorldDoor } from "../../public/DoorCopy/Copy";
+import { WorldDoor } from "../../../../public/DoorCopy/Copy";
 import Door from "../Door";
-import About from "../../components/World/About";
+import About from "./About";
 import Skills from "./Skills";
 
 function Left({  world, active, setActive, name, isBackVisible, escape}) {

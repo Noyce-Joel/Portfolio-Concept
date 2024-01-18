@@ -13,7 +13,7 @@ import Work from "./Work";
 import Projects from "./Projects";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-
+import {useAppState} from '../context/Provider'
 const box = new THREE.BoxGeometry(10, 10, 10);
 const left = new THREE.MeshStandardMaterial({
   color: "rgb(32, 80, 100)",
@@ -41,6 +41,29 @@ const bottom = new THREE.MeshStandardMaterial({
 });
 
 function Stage() {
+  const appState = useAppState();
+  // const active1 = appState.state.active1;
+  // const setActive1 = (value) => appState.dispatch({ type: 'SET_ACTIVE1', payload: value });
+  // const active2 = appState.state.active2;
+  // const setActive2 = (value) => appState.dispatch({ type: 'SET_ACTIVE2', payload: value });
+  // const active3 = appState.state.active3;
+  // const setActive3 = (value) => appState.dispatch({ type: 'SET_ACTIVE3', payload: value });
+  // const work = appState.state.work;
+  // const setWork = (value) => appState.dispatch({ type: 'SET_WORK', payload: value });
+  // const world = appState.state.world;
+  // const setWorld = (value) => appState.dispatch({ type: 'SET_WORLD', payload: value });
+  // const projects = appState.state.projects;
+  // const setProjects = (value) => appState.dispatch({ type: 'SET_PROJECTS', payload: value });
+  // const rotateLeft = appState.state.rotateLeft;
+  // const setRotateLeft = (value) => appState.dispatch({ type: 'SET_ROTATELEFT', payload: value });
+  // const rotateRight = appState.state.rotateRight;
+  // const setRotateRight = (value) => appState.dispatch({ type: 'SET_ROTATERIGHT', payload: value });
+  // const type = appState.state.type;
+  // const setType = (value) => appState.dispatch({ type: 'SET_TYPE', payload: value });
+  // const nav = appState.state.nav;
+  // const setNav = (value) => appState.dispatch({ type: 'SET_NAV', payload: value });
+  // const isNowVisible = appState.state.isNowVisible;
+  // const setIsNowVisible = (value) => appState.dispatch({ type: 'SET_ISNOWVISIBLE', payload: value });
   const [active1, setActive1] = useState(null);
   const [active2, setActive2] = useState(null);
   const [active3, setActive3] = useState(null);

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { WorkDoor } from "../../public/DoorCopy/Copy";
+import { WorkDoor } from "../../../../public/DoorCopy/Copy";
 import Door from "../Door";
 import Exp from "./Exp";
 function WorkBack({ work, active, setActive, name, isBackVisible, escape }) {

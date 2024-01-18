@@ -1,5 +1,5 @@
 import React from "react";
-import About from "../World/About";
+import About from "./About";
 
 function Front({ isBackVisible }) {
   const position = [0, 0, 5];
