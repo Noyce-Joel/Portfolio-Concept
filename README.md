@@ -9,4 +9,4 @@ One of the challenges I faced in this build was reducing large amounts of prop d
 I decided to refactor and adopt the simplest solution: to use React's Context API to manage global state variables. 
 This helped to clean up the code, making it easier to read as the project continued to grow in size. 
 
-Visit the site here: concept-for-portfolio.vercel.app
+Visit the site here: https://concept-for-portfolio.vercel.app

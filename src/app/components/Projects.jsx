@@ -38,43 +38,43 @@ function Projects({
     setSrc(imgId);
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape" && active === name && slideShow) {
-        escape();
+  // useEffect(() => {
+  //   const handleKeyDown = (e) => {
+  //     if (e.key === "Escape" && active === name && slideShow) {
+  //       escape();
 
-        e.stopPropagation();
-        setSlideShow(!slideShow);
-      }
-    };
-    const handleRotate = (e) => {
-      if (active === name) {
-        if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-          setIsNowVisible(true);
-          setSlideShow(false);
-        }
-        if (e.key === "a" || e.key === "d") {
-          setIsNowVisible(true);
-        }
-      }
-    };
+  //       e.stopPropagation();
+  //       setSlideShow(!slideShow);
+  //     }
+  //   };
+  //   const handleRotate = (e) => {
+  //     if (active === name) {
+  //       if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+  //         setIsNowVisible(true);
+  //         setSlideShow(false);
+  //       }
+  //       if (e.key === "a" || e.key === "d") {
+  //         setIsNowVisible(true);
+  //       }
+  //     }
+  //   };
 
-    const handleMouseDown = () => {
-      if (active === name) {
-        setIsNowVisible(true);
-        setNav(false);
-      }
-    };
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("keydown", handleRotate);
+  //   const handleMouseDown = () => {
+  //     if (active === name) {
+  //       setIsNowVisible(true);
+  //       setNav(false);
+  //     }
+  //   };
+  //   window.addEventListener("mousedown", handleMouseDown);
+  //   window.addEventListener("keydown", handleKeyDown);
+  //   window.addEventListener("keydown", handleRotate);
 
-    return () => {
-      window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("keydown", handleRotate);
-    };
-  }, [escape, slideShow, setIsNowVisible, setNav, active, name]);
+  //   return () => {
+  //     window.removeEventListener("mousedown", handleMouseDown);
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //     window.removeEventListener("keydown", handleRotate);
+  //   };
+  // }, [escape, slideShow, setIsNowVisible, setNav, active, name]);
 
   return (
     <>
