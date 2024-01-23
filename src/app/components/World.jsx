@@ -52,6 +52,7 @@ function World({
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [moveLeft, moveRight, escape, setNav]);
+const push = 'push'
 
   return (
     <>
