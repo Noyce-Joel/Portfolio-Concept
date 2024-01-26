@@ -10,6 +10,7 @@ function ProjectsRight({
   index,
   setIndex,
 }) {
+
   const crudImages = [
     {
       image: "/b21.webp",
