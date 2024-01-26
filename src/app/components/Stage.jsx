@@ -13,7 +13,7 @@ import Work from "./Work";
 import Projects from "./Projects";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-import { useAppState } from "../context/Provider";
+
 import { box, left, right, front, back, top, bottom } from "./Box";
 import { anim } from "./Feature/Anim";
 function Stage() {
@@ -69,79 +69,33 @@ function Stage() {
   useCursor(state.hovered, "pointer", "auto");
 
   const texture = useTexture("/p-bg.png");
+  const handleLookAt = (objectName, x, y, z) => {
+    const targetPosition = new THREE.Vector3();
+    scene.getObjectByName(objectName).getWorldPosition(targetPosition);
+    controlsRef.current.setLookAt(
+      x,
+      y,
+      z,
+      targetPosition.x,
+      targetPosition.y,
+      targetPosition.z,
+      true
+    );
+  };
+
   useEffect(() => {
     if (state.active1) {
-      const targetPosition = new THREE.Vector3();
-      scene.getObjectByName(state.active1).getWorldPosition(targetPosition);
-      controlsRef.current.setLookAt(
-        0,
-        7.5,
-        1.9,
-        targetPosition.x,
-        targetPosition.y,
-        targetPosition.z,
-        true
-      );
+      handleLookAt(state.active1, 0, 7.5, 1.9);
     } else if (state.active2) {
-      const targetPosition = new THREE.Vector3();
-      scene.getObjectByName(state.active2).getWorldPosition(targetPosition);
-      controlsRef.current.setLookAt(
-        -20,
-        7.5,
-        1.9,
-        targetPosition.x,
-        targetPosition.y,
-        targetPosition.z,
-        true
-      );
+      handleLookAt(state.active2, -20, 7.5, 1.9);
     } else if (state.active3) {
-      const targetPosition = new THREE.Vector3();
-      scene.getObjectByName(state.active3).getWorldPosition(targetPosition);
-      controlsRef.current.setLookAt(
-        20,
-        7.5,
-        1.9,
-        targetPosition.x,
-        targetPosition.y,
-        targetPosition.z,
-        true
-      );
+      handleLookAt(state.active3, 20, 7.5, 1.9);
     } else if (state.work) {
-      const targetPosition = new THREE.Vector3();
-      scene.getObjectByName(state.work).getWorldPosition(targetPosition);
-      controlsRef.current.setLookAt(
-        35,
-        7.5,
-        10.9,
-        targetPosition.x,
-        targetPosition.y,
-        targetPosition.z,
-        true
-      );
+      handleLookAt(state.work, 35, 7.5, 10.9);
     } else if (state.world) {
-      const targetPosition = new THREE.Vector3();
-      scene.getObjectByName(state.world).getWorldPosition(targetPosition);
-      controlsRef.current.setLookAt(
-        -35,
-        7.5,
-        10.9,
-        targetPosition.x,
-        targetPosition.y,
-        targetPosition.z,
-        true
-      );
+      handleLookAt(state.world, -35, 7.5, 10.9);
     } else if (state.projects) {
-      const targetPosition = new THREE.Vector3();
-      scene.getObjectByName(state.projects).getWorldPosition(targetPosition);
-      controlsRef.current.setLookAt(
-        0,
-        7.5,
-        15.9,
-        targetPosition.x,
-        targetPosition.y,
-        targetPosition.z,
-        true
-      );
+      handleLookAt(state.projects, 0, 7.5, 15.9);
     } else {
       controlsRef.current.setLookAt(0, 20, 34, 0, 7.5, 0, true);
     }
@@ -155,11 +109,15 @@ function Stage() {
     state.active3,
   ]);
 
+  const handleRotate = (objectName, rotation) => {
+    const targetPosition = new THREE.Vector3();
+    scene.getObjectByName(objectName).getWorldPosition(targetPosition);
+    controlsRef.current.rotate(rotation, 0, true);
+  };
+
   useEffect(() => {
     if (state.rotateLeft) {
-      const targetPosition = new THREE.Vector3();
-      scene.getObjectByName(state.rotateLeft).getWorldPosition(targetPosition);
-      controlsRef.current.rotate(Math.PI / 2, 0, true);
+      handleRotate(state.rotateLeft, Math.PI / 2);
     } else {
       controlsRef.current.rotate(0, 0, true);
     }
@@ -167,9 +125,7 @@ function Stage() {
 
   useEffect(() => {
     if (state.rotateRight) {
-      const targetPosition = new THREE.Vector3();
-      scene.getObjectByName(state.rotateRight).getWorldPosition(targetPosition);
-      controlsRef.current.rotate(-Math.PI / 2, 0, true);
+      handleRotate(state.rotateRight, -Math.PI / 2);
     } else {
       controlsRef.current.rotate(0, 0, true);
     }

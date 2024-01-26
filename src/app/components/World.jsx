@@ -3,12 +3,9 @@ import Back from "./World/Back";
 import Right from "./World/Right";
 import Left from "./World/Left";
 import Front from "./World/Front";
-import { Html } from "@react-three/drei";
-import Image from "next/image";
 import Navigate from "./Navigate";
 function World({
   world,
-  setWorld,
   active,
   setActive,
   name,
@@ -26,7 +23,7 @@ function World({
   set,
   nav,
   setNav,
-  handleClick
+  handleClick,
 }) {
   const isBackVisible = active === name;
 
@@ -34,18 +31,18 @@ function World({
     const handleKeyDown = (e) => {
       if (e.key === "ArrowLeft") {
         moveLeft();
-        setNav(false)
+        setNav(false);
       } else if (e.key === "ArrowRight") {
         moveRight();
-        setNav(false)
+        setNav(false);
       } else if (e.key === "Escape") {
         escape();
       } else if (e.key === "a") {
         moveLeft();
-        setNav(false)
+        setNav(false);
       } else if (e.key === "d") {
         moveRight();
-        setNav(false)
+        setNav(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -53,16 +50,16 @@ function World({
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [moveLeft, moveRight, escape, setNav]);
-const push = 'push'
+  const push = "push";
 
   return (
     <>
       <group
         name={name}
-        onClick={(e) => handleClick('world', e)}
+        onClick={(e) => handleClick("world", e)}
         position={[-20, 7.5, 0]}
       >
-       {isBackVisible && nav && <Navigate />}
+        {isBackVisible && nav && <Navigate />}
         <mesh
           onPointerOver={() => set(true)}
           onPointerOut={() => set(false)}
