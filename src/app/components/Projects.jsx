@@ -24,6 +24,7 @@ function Projects({
   set,
   nav,
   setNav,
+  handleClick
 }) {
   const isVisible = active === name;
 
@@ -31,7 +32,7 @@ function Projects({
   const [src, setSrc] = useState("/p2.png");
   const [index, setIndex] = useState(0);
 
-  const handleClick = (e) => {
+  const handlePaneClick = (e) => {
     e.stopPropagation();
     setSlideShow(!slideShow);
     let imgId = e.target.id;
@@ -80,11 +81,7 @@ function Projects({
     <>
       <group
         position={[0, 7.5, 0]}
-        onClick={(e) => {
-          projects
-            ? e.stopPropagation()
-            : (setProjects(projects === name ? null : name), setNav(true));
-        }}
+        onClick={(e) => handleClick('projects', e)}
         name={name}
       >
         <mesh
@@ -95,7 +92,7 @@ function Projects({
         >
           {isVisible && nav && <Navigate />}
           <ProjectsFront
-            handleClick={handleClick}
+            handleClick={handlePaneClick}
             slideShow={slideShow}
             setSlideShow={setSlideShow}
             src={src}
@@ -111,7 +108,7 @@ function Projects({
           />
 
           <ProjectsBack
-            handleClick={handleClick}
+            handleClick={handlePaneClick}
             isVisible={isVisible}
             slideShow={slideShow}
             setSlideShow={setSlideShow}
@@ -122,7 +119,7 @@ function Projects({
           />
 
           <ProjectsRight
-            handleClick={handleClick}
+            handleClick={handlePaneClick}
             slideShow={slideShow}
             setSlideShow={setSlideShow}
             src={src}
@@ -132,7 +129,7 @@ function Projects({
           />
 
           <ProjectsLeft
-            handleClick={handleClick}
+            handleClick={handlePaneClick}
             slideShow={slideShow}
             setSlideShow={setSlideShow}
             src={src}

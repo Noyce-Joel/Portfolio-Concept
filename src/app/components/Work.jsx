@@ -21,6 +21,7 @@ function Work({
   set,
   nav,
   setNav,
+  handleClick
 }) {
   const isBackVisible = active === name;
 
@@ -72,11 +73,7 @@ function Work({
   return (
     <>
       <group
-        onClick={(e) => {
-          work
-            ? e.stopPropagation()
-            : (setWork(work === name ? name : name), setNav(true));
-        }}
+        onClick={(e) => handleClick('work', e)}
         position={[20, 7.5, 0]}
         name={name}
       >

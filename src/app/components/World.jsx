@@ -25,7 +25,8 @@ function World({
   anim,
   set,
   nav,
-  setNav
+  setNav,
+  handleClick
 }) {
   const isBackVisible = active === name;
 
@@ -58,9 +59,7 @@ const push = 'push'
     <>
       <group
         name={name}
-        onClick={(e) => {
-          world ? e.stopPropagation() : (setWorld(world === name ? null : name), setNav(true));
-        }}
+        onClick={(e) => handleClick('world', e)}
         position={[-20, 7.5, 0]}
       >
        {isBackVisible && nav && <Navigate />}
