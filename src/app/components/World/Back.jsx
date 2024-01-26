@@ -3,33 +3,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
-
+import { backContainer, backAnimation } from "../Feature/Anim";
 function Back({ anim, isBackVisible }) {
   const call = () => {
     window.location.href = "tel: 07535137261";
   };
-  const container = {
-    whileInView: {
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.15,
-      },
-    },
-  };
-  const animation = {
-    initial: {
-      opacity: 0,
-      scale: 0.7,
-    },
-    whileInView: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        type: "spring",
-      },
-    },
-  };
+  
   return (
     <>
       {isBackVisible && (
@@ -41,13 +20,13 @@ function Back({ anim, isBackVisible }) {
             key="panel-wrap-about-back"
           >
             <motion.div
-              variants={container}
+              variants={backContainer}
               initial="initial"
               whileInView="whileInView"
               className="about-back center"
               key='world-back-container'
             >
-              <motion.div variants={animation} key='world-back-iamge-wrap' className="about-image-wrap">
+              <motion.div variants={backAnimation} key='world-back-iamge-wrap' className="about-image-wrap">
                 <Image
                   className="about-image"
                   style={{ borderRadius: "20px" }}
@@ -57,7 +36,7 @@ function Back({ anim, isBackVisible }) {
                   alt="me"
                 />
               </motion.div>
-              <motion.div variants={animation} key='world-back-bio' className="about-back-info">
+              <motion.div variants={backAnimation} key='world-back-bio' className="about-back-info">
                 <b>Web Developer</b>
                 <h1>Joel Noyce</h1>
                 <b>BA Hons Spanish & Linguistics</b>

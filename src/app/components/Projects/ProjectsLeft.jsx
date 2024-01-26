@@ -10,19 +10,11 @@ function ProjectsLeft({
   index,
   setIndex,
 }) {
-  const crudImages = [
-    {
-      image: "/b21.webp",
-    },
-    {
-      image: "/b22.webp",
-    },
-    {
-      image: "/b23.webp",
-    },
-    {
-      image: "/b21.webp",
-    },
+  const portfolioImages = [
+    { image: "/a2.webp" },
+    { image: "/a1.webp" },
+    { image: "/a4.webp" },
+    { image: "/a3.webp" },
   ];
 
   const position = [-5, 0, 0];
@@ -30,7 +22,7 @@ function ProjectsLeft({
     <>
       {isNowVisible && (
         <Project
-          images={crudImages}
+          images={portfolioImages}
           anim={anim}
           isVisible={isVisible}
           isNowVisible={isNowVisible}

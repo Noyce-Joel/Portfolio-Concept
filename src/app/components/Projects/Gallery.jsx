@@ -23,34 +23,33 @@ function Gallery({ href, images, handleClick, className, index, setIndex }) {
 
   return (
     <>
-    <Suspense>
-      <motion.div className="gallery-img-wrap" key='photo-wrap'>
-        <button className="gallery-button-left" onClick={handleNext}>
-          <LeftArrow />
-        </button>
-        <motion.div initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}>
-        <Image
-          key={photo.image}
-          alt='gallery-image'
-          className={className}
-          id={photo.image}
-          onClick={handleClick}
-          src={photo.image}
-          width={1500}
-          height={1000}
-          priority
-          quality={100}
-        />
+      <Suspense>
+        <motion.div className="gallery-img-wrap" key="photo-wrap">
+          <button className="gallery-button-left" onClick={handleNext}>
+            <LeftArrow />
+          </button>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <Image
+              key={photo.image}
+              alt="gallery-image"
+              className={className}
+              id={photo.image}
+              onClick={handleClick}
+              src={photo.image}
+              width={1500}
+              height={1000}
+              priority
+              quality={100}
+            />
+          </motion.div>
+
+          <a className="visit-button" href={href}>
+            VIEW
+          </a>
+          <button className="gallery-button-right" onClick={handlePrev}>
+            <RightArrow />
+          </button>
         </motion.div>
-        
-        <a className="visit-button" href={href}>
-          VIEW
-        </a>
-        <button className="gallery-button-right" onClick={handlePrev}>
-          <RightArrow />
-        </button>
-      </motion.div>
       </Suspense>
     </>
   );

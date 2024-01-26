@@ -1,5 +1,5 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import { useTexture } from "@react-three/drei";
+import React, { useEffect, useState } from "react";
+
 import ProjectsBack from "./Projects/ProjectsBack";
 import ProjectsFront from "./Projects/ProjectsFront";
 import ProjectsRight from "./Projects/ProjectsRight";

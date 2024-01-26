@@ -1,10 +1,9 @@
 import { Html } from "@react-three/drei";
-import React, {  } from "react";
+import React from "react";
 import Gallery from "./Gallery";
 import { motion } from "framer-motion";
-
+import { backContainer, backAnimation } from "../Feature/Anim";
 function Project({
- 
   isVisible,
   isNowVisible,
   slideShow,
@@ -13,30 +12,9 @@ function Project({
   index,
   setIndex,
   images,
-  
+
   position,
 }) {
-  const container = {
-    whileInView: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-  const animation = {
-    initial: {
-      opacity: 0,
-      scale: 0.7,
-    },
-    whileInView: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-      },
-    },
-  };
-
   return (
     <>
       <Html position={position} center>
@@ -51,7 +29,7 @@ function Project({
             key="background"
           ></motion.div>
           <motion.div
-            variants={container}
+            variants={backContainer}
             whileInView="whileInView"
             initial="initial"
             animate="animate"
@@ -59,9 +37,9 @@ function Project({
             className="projects-back"
             key="projects-back"
           >
-            <motion.div variants={animation} className="panel">
+            <motion.div variants={backAnimation} className="panel">
               <motion.div
-                variants={animation}
+                variants={backAnimation}
                 className="projects-gallery-wrap"
               >
                 <Gallery

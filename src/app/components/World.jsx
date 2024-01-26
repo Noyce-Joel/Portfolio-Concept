@@ -88,37 +88,3 @@ function World({
 
 export default World;
 
-{
-  /* {isBackVisible && (
-          <Html center>
-            <motion.div
-              initial={{ scale: 0.7, opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{ duration: 0.5, delay: 0.55 }}
-              className="move-buttons"
-            >
-              <button
-                className="left"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  moveLeft();
-                }}
-              >
-                LEFT
-              </button>
-              <button
-                className="right"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  moveRight();
-                }}
-              >
-                RIGHT
-              </button>
-            </motion.div>
-          </Html>
-        )} */
-}

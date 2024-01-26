@@ -4,9 +4,9 @@ import WorkRight from "./work/WorkRight";
 import WorkFront from "./work/WorkFront";
 import WorkLeft from "./work/WorkLeft";
 import Navigate from "./Navigate";
+import { container, panel } from "./Feature/Anim";
 function Work({
   work,
-  setWork,
   escape,
   active,
   setActive,
@@ -20,42 +20,9 @@ function Work({
   bottom,
   set,
   nav,
-  setNav,
-  handleClick
+  handleClick,
 }) {
   const isBackVisible = active === name;
-
-  const container = {
-    whileInView: {
-      transition: {
-        friction: 400,
-        mass: 0.7,
-        duration: 2,
-        staggerChildren: 0.2,
-        delayChildren: 0.55,
-      },
-    },
-  };
-
-  const panel = {
-    initial: {
-      opacity: 0,
-      scale: 0.5,
-      x: -100,
-    },
-    whileInView: {
-      opacity: 1,
-      scale: 1,
-      x: 0,
-      transition: {
-        duration: 1,
-        delayChildren: 0.4,
-        type: "spring",
-        friction: 200,
-        mass: 0.8,
-      },
-    },
-  };
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -73,7 +40,7 @@ function Work({
   return (
     <>
       <group
-        onClick={(e) => handleClick('work', e)}
+        onClick={(e) => handleClick("work", e)}
         position={[20, 7.5, 0]}
         name={name}
       >
@@ -120,37 +87,3 @@ function Work({
 
 export default Work;
 
-{
-  /* {isBackVisible && (
-          <Html center>
-            <motion.div
-              initial={{ scale: 0.7, opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{ duration: 0.5, delay: 0.55 }}
-              className="move-buttons"
-            >
-              <button
-                className="left"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  moveLeft();
-                }}
-              >
-                LEFT
-              </button>
-              <button
-                className="right"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  moveRight();
-                }}
-              >
-                RIGHT
-              </button>
-            </motion.div>
-          </Html>
-        )} */
-}
