@@ -6,3 +6,5 @@ I enabled the user to navigate the canvas by manipulating camera controls with e
 and I incorporated HTML using Drei to display copy. This allows users to choose a box and explore it's contents in 360 degrees. 
 
 Visit the site here: https://concept-for-portfolio.vercel.app
+
+![Page image](/public/page.jpeg)
